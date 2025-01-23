@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0e1129;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00d4ff;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    font-size: 1rem;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .navbar ul li a.active, 
+  .navbar ul li a:hover {
+    color: #00d4ff;
+  }
+  
+  .btn-contact {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
