@@ -4,6 +4,7 @@
 
 ## 🌟 About the Project
 This is my personal portfolio project built to showcase my skills, projects, and experiences. It includes dynamic project management with likes functionality, integration with PostgreSQL for data storage, and a responsive frontend to display my work visually.
+
 <img width="397" alt="Screenshot 2025-01-24 131736" src="https://github.com/user-attachments/assets/e7c6923f-7a19-4b07-82f4-fd9d51bfb0db" />
 
 ### componenets
