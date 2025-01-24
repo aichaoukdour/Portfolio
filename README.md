@@ -7,14 +7,13 @@ This is my personal portfolio project built to showcase my skills, projects, and
 <img width="397" alt="Screenshot 2025-01-24 131736" src="https://github.com/user-attachments/assets/e7c6923f-7a19-4b07-82f4-fd9d51bfb0db" />
 
 ### componenets
-<img width="941" alt="Screenshot 2025-01-24 125609" src="https://github.com/user-attachments/assets/b1b2e3da-3d13-44cc-b0c2-821a1c88e54d" />
+<img width="928" alt="Screenshot 2025-01-24 125720" src="https://github.com/user-attachments/assets/c8998c5d-2c50-44c8-908a-a68e28a90eba" />
 <img width="940" alt="Screenshot 2025-01-24 125635" src="https://github.com/user-attachments/assets/2feaefcb-d33b-4125-8eed-24e6b4518ed0" />
 <img width="936" alt="Screenshot 2025-01-24 125700" src="https://github.com/user-attachments/assets/b9962386-1292-4657-80c7-0d2a683f347c" />
 <img width="928" alt="Screenshot 2025-01-24 125720" src="https://github.com/user-attachments/assets/822b10b4-b5de-4a2b-bac3-2af7db8f69bf" />
 <img width="946" alt="Screenshot 2025-01-24 125741" src="https://github.com/user-attachments/assets/e3932e71-4066-409e-a61a-48e57fa9d3d0" />
-<img width="943" alt="Screenshot 2025-01-24 125804" src="https://github.com/user-attachments/assets/3eb23fc6-b809-4dc9-a6fe-c2a6f34f2a49" />
+<img width="928" alt="Screenshot 2025-01-24 125720" src="https://github.com/user-attachments/assets/172b0af4-5b74-429f-98f5-ed918d5ea0c8" />
 <img width="943" alt="Screenshot 2025-01-24 125826" src="https://github.com/user-attachments/assets/1378c8f4-73ed-4a1d-9993-75f561414316" />
-<img width="397" alt="Screenshot 2025-01-24 131736" src="https://github.com/user-attachments/assets/05d761cc-9c47-490d-9669-0476476575bf" />
 
 ---
 
