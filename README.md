@@ -39,7 +39,8 @@ This is my personal portfolio project built to showcase my skills, projects, and
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?logo=postgresql&logoColor=white&style=for-the-badge)
 
 ### Other Tools
-![Visual Studio Code](https://img.shields.io/badge/-VS%20Code-007ACC?logo=visual-studio-code&logoColor=white&style=for-the-badge) ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white&style=for-the-badge) ![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=for-the-badge)
+![Visual Studio Code](https://img.shields.io/badge/-VS%20Code-007ACC?logo=visual-studio-code&logoColor=white&style=for-the-badge) ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white&style=for-the-badge) ![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=for-the-badge) ![Render](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/render/render-original.svg)
+
 
 
 
@@ -111,18 +112,6 @@ POST /projects/:name/like
     "likes": 13
   }
   ```
-
----
-
-## 📸 Screenshots
-
-### Home Page
-![Home Page](https://via.placeholder.com/800x400?text=Home+Page) <!-- Replace this with a real screenshot -->
-
-### Project List
-![Project List](https://via.placeholder.com/800x400?text=Project+List) <!-- Replace this with a real screenshot -->
-
----
 
 
 
