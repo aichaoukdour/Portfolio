@@ -59,7 +59,46 @@ app.post("/projects/:name/like", async (req, res) => {
   }
 });
 
-// Démarrer le serveur
+
+
+
+
+const nodemailer = require("nodemailer");
+
+
+
+app.use(cors());
+app.use(express.json());
+
+// Configurer Nodemailer
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "aichaoukdour02@gmail.com", // Remplace par ton email
+    pass: "klqt wdfs glss axni", // Remplace par le mot de passe ou utilise un App Password
+  },
+});
+
+// Route pour envoyer un email
+app.post("/send-email", async (req, res) => {
+  const { name, email, message } = req.body;
+
+  const mailOptions = {
+    from: email,
+    to: "aichaoukdou02@gmail.com",
+    subject: `Nouveau message de ${name}`,
+    text: `Nom: ${name}\nEmail: ${email}\nMessage: ${message}`,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.json({ success: true, message: "Email envoyé avec succès!" });
+  } catch (error) {
+    console.error("Erreur lors de l'envoi de l'email:", error);
+    res.status(500).json({ success: false, error: "Erreur lors de l'envoi de l'email" });
+  }
+});
+
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

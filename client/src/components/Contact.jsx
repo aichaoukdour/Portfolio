@@ -1,75 +1,100 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Envoi en cours...");
+
+    try {
+      const response = await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus("Message envoyé avec succès !");
+        setFormData({ name: "", email: "", message: "" }); // Réinitialiser le formulaire
+      } else {
+        setStatus("Erreur lors de l'envoi du message.");
+      }
+    } catch (error) {
+      setStatus("Erreur de connexion au serveur.");
+    }
+  };
+
   return (
-    <div className="bg-gradient-to-r from-pink-500 via-purple-700 to-indigo-700 text-soft-pink p-4 shadow-md mb-8 text-center border-6 border-pink-500 transition-all duration-300">
-      <section
-        id="contact"
-        className="full-w-screen w-full bg-gradient-to-r from-pink-500 via-purple-700 to-indigo-700 rounded-lg px-3 py-4 flex flex-col items-center justify-center shadow-[0_10px_40px_5px_rgba(75,0,130,0.7)]"
-      >
+    <div className="bg-gradient-to-r from-pink-500 via-purple-700 to-indigo-700 text-soft-pink p-4 shadow-md mb-8 text-center">
+      <section id="contact" className="w-full bg-gradient-to-r from-pink-500 via-purple-700 to-indigo-700 rounded-lg px-3 py-4 flex flex-col items-center shadow-lg">
         <h2 className="text-5xl font-extrabold text-gradient bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 text-transparent bg-clip-text px-4 py-9">
           CONTACT
         </h2>
+
         <div className="flex flex-col md:flex-row gap-10 items-center justify-center">
-          {/* Left Section */}
+          {/* Informations */}
           <div className="max-w-md text-center md:text-left text-white">
-            <h3 className="text-2xl font-semibold mb-4">Drop Me a Message</h3>
-            <p className="mb-6">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text.
-            </p>
+            <h3 className="text-2xl font-semibold mb-4">Envoyez-moi un message</h3>
             <div className="space-y-4">
-              {/* Phone */}
               <div className="flex items-center gap-4">
-                <div className="p-1/4 items-center justify-center">
-                  <FaPhoneAlt className="h-6 w-6 text-black" />
-                </div>
+                <FaPhoneAlt className="h-6 w-6 text-black" />
                 <span className="text-lg">+212656034538</span>
               </div>
-              {/* Email */}
               <div className="flex items-center gap-4">
-                <div className="p-1/4 items-center justify-center">
-                  <FaEnvelope className="h-6 w-6 text-black" />
-                </div>
+                <FaEnvelope className="h-6 w-6 text-black" />
                 <span>aichaoukdou02@gmail.com</span>
               </div>
-              {/* Address */}
               <div className="flex items-center gap-4">
-                <div className="p-1/4 items-center justify-center">
-                  <FaMapMarkerAlt className="h-6 w-6 text-black" />
-                </div>
-                <span>
-                  House No: ****************************************
-                </span>
+                <FaMapMarkerAlt className="h-6 w-6 text-black" />
+                <span>Adresse: **********</span>
               </div>
             </div>
           </div>
-          {/* Right Section */}
-          <div className="p-6 bg-gradient-to-r from-pink-500 via-purple-700 to-indigo-700 rounded-lg shadow-[0_20px_40px_10px_rgba(75,0,130,0.7)] max-w-sm w-full space-y-4">
+
+          {/* Formulaire */}
+          <form onSubmit={handleSubmit} className="p-6 bg-black rounded-lg shadow-lg max-w-sm w-full space-y-4">
             <input
               type="text"
-              placeholder="Name"
-              className="w-full p-3 rounded-md bg-black text-black outline-none"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Nom"
+              className="w-full p-3 rounded-md bg-gray-800 text-white outline-none"
+              required
             />
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Email"
-              className="w-full p-3 rounded-md bg-black text-black-800 outline-none"
+              className="w-full p-3 rounded-md bg-gray-800 text-white outline-none"
+              required
             />
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Message"
-              className="w-full p-3 rounded-md bg-black text-black outline-none"
+              className="w-full p-3 rounded-md bg-gray-800 text-white outline-none"
               rows="4"
+              required
             ></textarea>
-            <button className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-300 transition">
-              Send
+            <button type="submit" className="w-full bg-pink-500 text-white py-2 rounded-md hover:bg-pink-600 transition">
+              Envoyer
             </button>
-          </div>
+          </form>
         </div>
-        <footer className="text-center mt-12 text-white">
-          <p>2025 - aicha, All rights reserved</p>
-        </footer>
+
+        {status && <p className="mt-4 text-white">{status}</p>}
       </section>
     </div>
   );

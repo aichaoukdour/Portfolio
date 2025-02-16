@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { FaHeart, FaGithub } from "react-icons/fa";
 
 // Importer les images locales
-import proj1 from "./proj1.jpeg";
+import proj1 from "./proj1.jpg";
 import proj2 from "./proj2.jpg";
 import proj3 from "./proj3.jpg";
+import proj4 from "./proj4.jpg";  // Ajoutez l'image pour le Dashboard
+import proj5 from "./proj5.jpg";  // Ajoutez l'image pour le Travel Website
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -15,6 +17,8 @@ const Portfolio = () => {
     proj1: proj1,
     proj2: proj2,
     proj3: proj3,
+    proj4: proj4,  // Ajoutez proj4 pour le Dashboard
+    proj5: proj5,  // Ajoutez proj5 pour le Travel Website
   };
 
   useEffect(() => {
@@ -68,48 +72,41 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="bg-gradient-to-b from-gray-900 to-black text-white px-6 py-12"
+      className="bg-gradient-to-b from-gray-900 to-black text-white px-10 py-1 flex flex-col items-center"
     >
-      <div className="text-center mb-10">
-        <h1 className="text-5xl font-extrabold text-gradient bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
+      {/* Title */}
+      <div className="text-center mt-12">
+        <h1 className="text-4xl font-extrabold text-gradient bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
           Portfolio Projects
         </h1>
-        <p className="mt-4 text-lg text-gray-300">Discover My Latest Creations</p>
+        <p className="mt-1 text-xs text-gray-400">Discover My Latest Creations</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Horizontal Layout */}
+      <div className="flex flex-wrap justify-center gap-4 p-20">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gradient-to-b from-gray-900 to-black text-white px-6 py-12 rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
+            className="bg-gradient-to-b from-gray-900 to-black text-white px-4 py-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 w-64 mb-8"
           >
             {/* Image Section */}
             <div className="overflow-hidden rounded-md">
               <img
                 src={imageMap[project.image]}
                 alt={project.title}
-                className="w-full h-28 object-cover rounded-md"
+                className="w-full h-40 object-cover rounded-md"
               />
             </div>
 
-            {/* Nom du projet */}
-            <h3 className="text-lg font-bold text-center mt-3">{project.title}</h3>
-
-            {/* Boutons */}
+            {/* Buttons */}
             <div className="flex items-center justify-between mt-4">
-              <button
-                className="text-sm text-pink-500 hover:underline"
-                onClick={() => openProjectDetails(project)}
-              >
-                More
-              </button>
               <a
-                href='https://github.com/aichaoukdour/Ecommerce-microser-Full' // Correctly linked GitHub URL
+                href={project.github_link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-pink-500 hover:text-purple-400 text-lg"
               >
-                <FaGithub  bg-indigo />
+                <FaGithub />
               </a>
             </div>
 
@@ -119,7 +116,7 @@ const Portfolio = () => {
                 className="flex items-center gap-1 text-pink-500 hover:text-purple-400 transition"
                 onClick={() => handleLike(index)}
               >
-                <FaHeart className="text-purple  bg-purple " /> Like
+                <FaHeart className="text-purple bg-purple" /> Like
               </button>
               <span className="text-gray-400">{project.likes} Likes</span>
             </div>
@@ -127,11 +124,11 @@ const Portfolio = () => {
         ))}
       </div>
 
-      {/* Modal pour afficher les détails */}
+      {/* Modal for displaying project details */}
       {selectedProject && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
           <div className="bg-gray-900 text-white rounded-lg p-6 max-w-lg w-full shadow-2xl">
-            <h2 className="text-3xl font-bold mb-4">{selectedProject.title}</h2>
+            <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
             <p className="text-gray-400 mb-6">
               {selectedProject.detailedDescription || selectedProject.description}
             </p>
@@ -148,7 +145,7 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="px-3 py-1 bg-transparent border border-pink-500 text-pink-500 rounded-md font-medium text-sm hover:bg-pink-500 hover:text-white transition flex items-center gap-2"
               >
-                <FaGithub className="text-lg bg-purple " />
+                <FaGithub className="text-lg bg-purple" />
               </a>
             </div>
           </div>

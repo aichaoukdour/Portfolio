@@ -1,5 +1,5 @@
 import React from "react";
-import resume from './cv2025.27.11dev.pdf'; // Adjust the path as necessary
+import resume from './cv2025.27.11dev.pdf'; // Ajustez le chemin si nécessaire
 import {
   FaUser,
   FaBirthdayCake,
@@ -20,17 +20,17 @@ const AboutMe = () => {
     >
       {/* Titre */}
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-extrabold text-gradient bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
+        <h1 className="text-5xl font-extrabold bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
           About <span>MySelf</span>
         </h1>
         <p className="mt-1 text-xs text-gray-400">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          I’m a passionate developer who loves creating innovative digital experiences.
         </p>
         <div className="mt-1 w-12 h-1 bg-pink-500 mx-auto"></div>
       </div>
 
       {/* Section Principale */}
-      <div className="flex flex-wrap max-w-4xl items-center  bg-gradient-to-b from-gray-900 to-black p-4 rounded-lg shadow-lg backdrop-blur-md border border-gray-700 transition-transform transform hover:scale-105 hover:shadow-2xl">
+      <div className="flex flex-wrap max-w-4xl items-center bg-gradient-to-b from-gray-900 to-black p-4 rounded-lg shadow-lg backdrop-blur-md border border-gray-700 transition-transform transform hover:scale-105 hover:shadow-2xl">
         {/* Section Image */}
         <div className="w-full md:w-2/5 p-20">
           <div className="relative">
@@ -48,8 +48,7 @@ const AboutMe = () => {
             Hello, I Am <span className="text-purple-500">Aicha Oukdour</span>
           </h2>
           <p className="text-xs text-gray-400 mb-6 leading-relaxed">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been the industry's standard dummy text ever since the 1500s.
+            I’m Aicha, a dedicated web developer from Morocco with a passion for technology and design. I thrive on solving problems and continuously seek to improve my skills through hands-on projects and collaboration.
           </p>
 
           {/* Informations Personnelles */}
@@ -70,7 +69,7 @@ const AboutMe = () => {
               <FaPhoneAlt className="mr-2 text-pink-500" />
               <span className="text-pink-500">Phone Number: </span> +212656034538
             </li>
-            <li className="flex items-center ">
+            <li className="flex items-center">
               <FaEnvelope className="mr-2 text-pink-500" />
               <span className="text-pink-500">Email: </span> aichaoukdour02@gmail.com
             </li>
@@ -104,7 +103,7 @@ const AboutMe = () => {
           {/* Bouton Télécharger CV */}
           <div className="mt-4">
             <a
-              href={resume} // Remplacez par le chemin réel de votre CV
+              href={resume} // Ajustez le chemin vers votre CV
               download
               className="px-4 py-2 text-xs bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-lg hover:opacity-90 transition-transform transform hover:scale-105 shadow-md"
             >
